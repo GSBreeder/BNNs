@@ -26,7 +26,7 @@ This code is based on pytorch.
 
 # Successful execution generates:
 ## results
-- {trait}_model.pth            # Trained BNN model
+### {trait}_model.pth            # Trained BNN model
 - {trait}_PredResult.csv      # Predictions with uncertainty estimates
 ## figures
 - PosteriorPlot               # Prediction vs actual plots
