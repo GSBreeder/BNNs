@@ -43,9 +43,9 @@ class Prior:
 
     def log_prob(self, inputs):
         """Compute the logarithmic probabilities and sum them."""
-        prob1 = self.normal1.log_prob(inputs).exp()  # 概率密度
-        prob2 = self.normal2.log_prob(inputs).exp()  # 概率密度
-        return (self.pi * prob1 + (1 - self.pi) * prob2).log().sum()  # 基于式38
+        prob1 = self.normal1.log_prob(inputs).exp()  
+        prob2 = self.normal2.log_prob(inputs).exp()  
+        return (self.pi * prob1 + (1 - self.pi) * prob2).log().sum()  
 
 
 class VariationalPoster:
@@ -58,8 +58,8 @@ class VariationalPoster:
     def sample(self, mu, rho):
         self.mu = mu
         self.sigma = rho.exp().log1p()
-        epsilon = self.normal.sample(mu.shape).to(mu.device)  # 算法2：第5行
-        return self.mu + self.sigma * epsilon  # 式33          # 算法2：第6行
+        epsilon = self.normal.sample(mu.shape).to(mu.device)  
+        return self.mu + self.sigma * epsilon          
 
     def log_prob(self, inputs):
         """
@@ -106,8 +106,8 @@ class BayesLinear(nn.Module):
             b = self.b_mu
         else:
             # Sample from the distribution
-            W = self.W_variational_post.sample(self.W_mu, self.W_rho)  # 算法2：第6行
-            b = self.b_variational_post.sample(self.b_mu, self.b_rho)  # 算法2：第6行
+            W = self.W_variational_post.sample(self.W_mu, self.W_rho)  
+            b = self.b_variational_post.sample(self.b_mu, self.b_rho)  
         return W, b
 
     def forward(self, inputs, train=True):
@@ -120,9 +120,9 @@ class BayesLinear(nn.Module):
 
         # --Train
         # Log prior
-        log_prior = self.prior.log_prob(W).sum() + self.prior.log_prob(b).sum()  # 算法2：第7行
+        log_prior = self.prior.log_prob(W).sum() + self.prior.log_prob(b).sum()  
         # Log variational posterior
-        log_va_poster = self.W_variational_post.log_prob(W) + self.b_variational_post.log_prob(b)  # 算法2：第7行
+        log_va_poster = self.W_variational_post.log_prob(W) + self.b_variational_post.log_prob(b)  
         return outputs, log_prior, log_va_poster
 
 
@@ -362,7 +362,7 @@ def cross_validate(X_datas, Y_datas, scaler_y, model_saved_path, n_splits, epoch
 
 
 def uncertainty_estimation(best_X_test, best_Y_test, scaler_y, model_saved_path, preds_saved_path,
-                           PosteriorPlot_saved_path, num_samples=200):#num_samples=200采样次数
+                           PosteriorPlot_saved_path, num_samples=200):
     predictions = []
     print('loading model...')
 #     best_model = BayesMLP(best_X_test.shape[2], 1, [16, 16], activate='relu').to(device)
