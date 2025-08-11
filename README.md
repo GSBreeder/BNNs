@@ -24,11 +24,11 @@ This code is based on pytorch.
 - shap
 
 
-##Successful execution generates:
-# results/
+# Successful execution generates:
+## results/
 - ├── {trait}_model.pth               # Trained BNN model
 - ├── {trait}_PredResult.csv          # Predictions with uncertainty estimates
-# figures/
+## figures/
 - ├── PosteriorPlot/                  # Prediction vs actual plots
 - ├── LossPlot/                       # Training/validation curves
 - ├── PearsonPlot/                    # Correlation metrics
