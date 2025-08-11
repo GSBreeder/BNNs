@@ -1,4 +1,4 @@
-# Bayesian Neural Networks for Genomic Prediction
+# Bayesian Neural Networks for Genomic Prediction and SNP Interpretation with SHAP and GWAS
 This is the code for manuscript "Bayesian Neural Networks for Genomic Prediction: Uncertainty Quantification and SNP Interpretation with SHAP and GWAS"
 
 ## Introduction
