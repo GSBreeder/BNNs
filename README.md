@@ -35,8 +35,6 @@ Uncertainty Plots: The generated PosteriorPlot visualizes the 95% confidence int
 
 SHAP Summary: The SummaryPlot shows the top SNPs influencing the trait. Red indicates high allele values, and their position on the X-axis indicates their positive or negative impact on the prediction.
 
-## Data Preparation
-We provide a dataset template `model_data.csv` in the repository. 
 
 ## Requirements
 This code is based on pytorch.
