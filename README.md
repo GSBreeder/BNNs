@@ -1,13 +1,6 @@
 # Bayesian Neural Networks for Genomic Prediction: Uncertainty Quantification and SNP Interpretation with SHAP and GWAS
 This is the code for manuscript "Bayesian Neural Networks for Genomic Prediction: Uncertainty Quantification and SNP Interpretation with SHAP and GWAS"
 
-## Introduction
-This repository contains the implementation for Bayesian Neural Networks (BNNs) with LASSO feature selection for genomic prediction of crop traits. The framework enables:
-- Simultaneous processing of genotype (features) and phenotype (target traits) data
-- Bayesian uncertainty quantification for predictions
-- SHAP-based model interpretability
-- Single or multi-trait prediction capabilities
-
 ## Technical Overview: Bayesian Genetic Prediction Framework
 
 This implementation features a robust Bayesian Neural Networks (BNNs) pipeline for high-dimensional genetic analysis, emphasizing statistical rigor and model interpretability.
